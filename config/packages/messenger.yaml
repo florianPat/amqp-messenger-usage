@@ -11,7 +11,13 @@ framework:
             # async: '%env(MESSENGER_TRANSPORT_DSN)%'
             # failed: 'doctrine://default?queue_name=failed'
             # sync: 'sync://'
+            rabbitmq:
+                dsn: '%env(MESSENGER_RABBITMQ_TRANSPORT_DSN)%'
+                serializer: App\Infrastructure\Messenger\Test\MessageSerializer
+                retry_strategy:
+                    max_retries: 0
 
         routing:
             # Route your messages to the transports
             # 'App\Message\YourMessage': async
+            'App\Infrastructure\Messenger\Test\Model\TestMessage': rabbitmq

@@ -6,10 +6,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "../amqp-messenger",
-            "options": {
-                "symlink": true
-            }
+            "url": "../amqp-messenger"
         }
     ],
     "require": {
