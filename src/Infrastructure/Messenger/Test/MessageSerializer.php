@@ -36,7 +36,7 @@ class MessageSerializer implements SerializerInterface
     public function decode(array $encodedEnvelope): Envelope
     {
         return $this->serializer->decode(
-            \array_merge_recursive(
+            \array_replace_recursive(
                 $encodedEnvelope,
                 ['headers' => ['type' => Model\TestMessage::class]],
             )

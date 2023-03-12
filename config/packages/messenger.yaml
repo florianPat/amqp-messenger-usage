@@ -16,6 +16,9 @@ framework:
                 serializer: App\Infrastructure\Messenger\Test\MessageSerializer
                 retry_strategy:
                     max_retries: 0
+                options:
+                    prefetch_count: 100
+                    read_timeout: 5
 
         routing:
             # Route your messages to the transports
